@@ -20,7 +20,7 @@
 #define FONT8 SystemFont5x7
 
 
-#define WIDTH 2  // Set width & height
+#define WIDTH 1  // Set width & height
 #define HEIGHT 1
 
 
@@ -52,6 +52,7 @@ void loop() {
 
   P10.loop();  // Run DMD loop
 
+
   get_SerialData();
 
   Scrolling_text(0, getScrollSpeed, Message);  // Call the function to write scrolling text on screen.
@@ -71,7 +72,6 @@ void Scrolling_text(int text_height, int scroll_speed, String scroll_text) {
   int txt_width = P10.textWidth(scroll_text);
 
   while (scrl_while == 1) {
-
     P10.loop();
     delay(1);
     if (millis() - pM > scroll_speed) {
